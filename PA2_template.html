@@ -125,12 +125,12 @@ ggplot(raw_data, aes(x=year)) + labs(title=&quot;Storm Data Record Density by Ye
 <pre class="r"><code>clean_data &lt;- raw_data[,c(&quot;EVTYPE&quot;,&quot;FATALITIES&quot;,&quot;INJURIES&quot;,&quot;PROPDMG&quot;,&quot;PROPDMGEXP&quot;,&quot;CROPDMG&quot;,&quot;CROPDMGEXP&quot;)]
 head(clean_data)</code></pre>
 <pre><code>##    EVTYPE FATALITIES INJURIES PROPDMG PROPDMGEXP CROPDMG CROPDMGEXP
-## 1 TORNADO          0       15    25.0          K       0           
-## 2 TORNADO          0        0     2.5          K       0           
-## 3 TORNADO          0        2    25.0          K       0           
-## 4 TORNADO          0        2     2.5          K       0           
-## 5 TORNADO          0        2     2.5          K       0           
-## 6 TORNADO          0        6     2.5          K       0</code></pre>
+## 1 TORNADO          0       15    25.0          K       0      NULL    NULL
+## 2 TORNADO          0        0     2.5          K       0      NULL    NULL
+## 3 TORNADO          0        2    25.0          K       0      NULL    NULL
+## 4 TORNADO          0        2     2.5          K       0      NULL    NULL
+## 5 TORNADO          0        2     2.5          K       0      NULL    NULL
+## 6 TORNADO          0        6     2.5          K       0      NULL    NULL         </code></pre>
 <p>As the questions are based on finding which EVTYPE has the greater impact, sort function is implemented to aggregate base on EVTYPE</p>
 <pre class="r"><code>sorter &lt;- function(fieldName, dataset=clean_data, head_n=20){
   index &lt;- which(colnames(dataset) == fieldName)
